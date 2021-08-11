@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Star squares value</h1>
+{% for star in star_list %}
+<h4>{{star.name}}, square value = {{star.square}}</h4>
+<hr>
+{% endfor %}
+{% endblock content %}

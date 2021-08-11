@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import F
 
 
 # Create your models here.
@@ -24,6 +25,10 @@ class Star(models.Model):
     color = models.CharField(max_length=100)
     star_system = models.ForeignKey("StarSystem", on_delete=models.SET_NULL, null=True)
 
+    @property
+    def square(self):
+        return self.diameter*self.diameter*3.14
+
 
 class Planet(models.Model):
     name = models.CharField(max_length=100)
@@ -31,3 +36,7 @@ class Planet(models.Model):
     color = models.CharField(max_length=100)
     star_system = models.ForeignKey("StarSystem", on_delete=models.SET_NULL, null=True)
     live = models.BooleanField(null=True)
+
+    @property
+    def square(self):
+        return self.diameter*self.diameter*3.14

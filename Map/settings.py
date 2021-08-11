@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Map.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR.joinpath("templates"), BASE_DIR.joinpath("Map", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from Map.views import PlanetListView, StarListView
 
 urlpatterns = [
     path('admin/', include('smuggler.urls')),
     path('admin/', admin.site.urls),
+    path('planets/', PlanetListView.as_view(), name="planet-list"),
+    path('stars/', StarListView.as_view(), name='star-list',)
 ]

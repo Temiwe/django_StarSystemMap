@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Planet squares value</h1>
+{% for planet in planet_list %}
+<h4>{{planet.name}}, square value = {{planet.square}}</h4>
+<hr>
+{% endfor %}
+{% endblock content %}
